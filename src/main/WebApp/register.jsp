@@ -37,19 +37,75 @@
         }
 	}
 </script>
+
+<style>
+input[type=text], input[type=password]{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #ccc;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s;
+  margin-left: 550px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+label{
+margin-left: 550px;
+font-family: Georgia;
+
+}
+
+input[type=submit]{
+  background-color:#48D1CC;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 550px;
+  cursor: pointer;
+  font-family: Georgia;
+}
+
+input[type=submit]:hover {
+  background-color: #20B2AA;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+}
+
+h2{
+font-family: Georgia;
+}
+
+p{
+margin-left: 550px;
+}
+</style>
 </head>
-<body>
-	<h3>Register</h3>
+<body style="background-color: #E0FFFF;">
+	<h2 align="center">Delivery and Visitor Access Portal</h2>
+	<h2 align="center">New Resident Registration</h2>
+<div>
 	<form:form name="registrationForm" modelAttribute="register" action="register_resident" method="post" onsubmit="return validatereg()">
-		Name: <input id="rname" name="resident_name" type="text" required> <br>
-		Flat Number: <input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br>
-		Mobile Number: <input id="rmobile_number" name="resident_mobile_number" type="text" required maxlength="10"> <br>
-		Email: <input id="remail" name="resident_email" type="text" required> <br>
-		Username: <input id="username" name="username" type="text" required> <br>
-		Password: <input id="password" name="password" type="password" required min="5" max="16"> <br>
-		Re-enter password: <input id="reenter" name="reenter" type="password" required min="5" max="16"> <br>
+		<label><b>Name: </b></label><br><input id="rname" name="resident_name" type="text" required> <br>
+		<label><b>Flat Number: </b></label><br><input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br>
+		<label><b>Mobile Number: </b></label><br><input id="rmobile_number" name="resident_mobile_number" type="text" required maxlength="10"> <br>
+		<label><b>Email: </b></label><br><input id="remail" name="resident_email" type="text" required> <br>
+		<label><b>Username: </b></label><br><input id="username" name="username" type="text" required> <br>
+		<label><b>Password: </b></label><br><input id="password" name="password" type="password" required min="5" max="16"> <br>
+		<label><b>Re-enter password: </b></label><br><input id="reenter" name="reenter" type="password" required min="5" max="16"> <br>
 		<input type="submit"><br>
 	</form:form>
-	Already registered user? Click <a href="login.jsp">here</a> to login
+	<p>Already registered resident? Click <a href="login.jsp">here</a> to login</p>
+</div>
 </body>
 </html>
