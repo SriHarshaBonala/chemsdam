@@ -6,24 +6,128 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Delivery Management System</title>
+<style>
+
+input[type=text]{
+ width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #ccc;
+  box-sizing: border-box;
+  -webkit-transition: 0.2s;
+  margin-left: 550px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+label{
+ margin-left: 550px;
+ font-family: Georgia;
+}
+
+input[type=submit]{
+  background-color:#48D1CC;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 550px;
+  cursor: pointer;
+  font-family: Georgia;
+}
+
+input[type=submit]:hover {
+  background-color: #20B2AA;
+}
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #48D1CC;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+h2{
+margin-left: 550px;
+font-family: Georgia;
+}
+</style>
 </head>
-<body>
-	<h4>Welcome to Delivery Management System</h4>
-	
-	<input type="radio" name="delivery" checked="checked">Register new delivery <br><br>
-	<input type="radio" name="delivery" onclick="location.href = 'past_delivery.jsp';">View past deliveries <br><br>
-	<input type="radio" name="delivery" onclick="location.href = 'future_delivery.jsp';">View upcoming deliveries <br><br>
+<body style="background-color: #E0FFFF;">
+	<h2>Welcome to Delivery Management System</h2>
+<div>	
+	<label class="container">Register new delivery <input type="radio" name="delivery" checked="checked"><span class="checkmark"></span></label>
+	<label class="container">View past deliveries <input type="radio" name="delivery" onclick="location.href = 'past_delivery.jsp';"><span class="checkmark"></span></label>
+	<label class="container">View upcoming deliveries<input type="radio" name="delivery" onclick="location.href = 'future_delivery.jsp';"><span class="checkmark"></span></label><br>
 	
 	<form:form name="newDelivery" modelAttribute="registerDelivery" action="register_delivery" method="post">
-		Flat Number : <input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br>
-		Package Name : <input name="delivery_name" type="text" required> <br>
-		Package Type : <input name="delivery_type" type="text" required> <br>
-		Delivery Company : <input name="delivery_company" type="text" required> <br>
-		Identification Number : <input name="delivery_reference_number" type="text" required> <br>
-		Expected Date : <input name="delivery_expected_date" type="text"> <br>
-		Mobile Number : <input id="rmobile_number" name="resident_mobile_number" type="text" required maxlength="10"> <br>
+		<label><b>Flat Number : </b></label><br><input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br><br>
+		<label><b>Package Name : </b></label><br><input name="delivery_name" type="text" required> <br><br>
+		<label><b>Package Type : </b></label><br><input name="delivery_type" type="text" required> <br><br>
+		<label><b>Delivery Company : </b></label><br><input name="delivery_company" type="text" required> <br><br>
+		<label><b>Identification Number : </b></label><br><input name="delivery_reference_number" type="text" required> <br><br>
+		<label><b>Expected Date : </b></label><br><input name="delivery_expected_date" type="text"> <br><br>
+		<label><b>Mobile Number : </b></label><br><input id="rmobile_number" name="resident_mobile_number" type="text" required maxlength="10"> <br><br>
 		<!-- Delivery Status : <select name="delivery_status"><option>Not delivered</option></select><br> -->
 		<input type="submit">
 	</form:form>
+</div>
 </body>
 </html>
