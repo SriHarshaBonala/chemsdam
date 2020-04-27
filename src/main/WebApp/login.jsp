@@ -52,6 +52,8 @@ div {
 
 h2{
 font-family: Georgia;
+text-align: center;
+margin-left: 50px;
 }
 
 p{
@@ -60,13 +62,15 @@ margin-left: 550px;
 
 </style>
 </head>
-<body style="background-color: #E0FFFF;">
-	<h2 align="center">Delivery and Visitor Access Portal</h2>
-	<h2 font-family="Georgia" align='center'>Login details</h2>
+<body style="background-color: Turquoise;">
+	<h2>Delivery and Visitor Access Portal</h2>
+	
 <div>
 	<form:form id="loginForm" modelAttribute="login" action="login_details" method="post">
+		<h2>Login details</h2>
 		<label><b>Username : </b></label><br><input id="username" name="username" type="text" placeholder="Enter Username"required> <br>
 		<label><b>Password : </b></label><br><input id="password" name="password" type="password" placeholder="Enter Password" required> <br>
+		<label style="color: red;"><b>${message}</b></label> <br><br>
 		<input type="submit"> <br>
 	</form:form >
 	<p>Forgot Password? Click <a href="forgotpassword.jsp">here</a> to recover account <br>Not a registered resident? Click <a href="register.jsp">here</a> to register</p>
