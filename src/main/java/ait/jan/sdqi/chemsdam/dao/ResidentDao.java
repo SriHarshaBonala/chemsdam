@@ -14,3 +14,4 @@ public interface ResidentDao
 	Resident validate(HttpServletRequest req, Credentials details);
 	void update(Resident resident);
 }
+ 
