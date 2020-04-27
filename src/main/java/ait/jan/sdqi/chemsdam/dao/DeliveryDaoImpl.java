@@ -31,7 +31,16 @@ public class DeliveryDaoImpl implements DeliveryDao
 	@Override
 	public void update(Delivery delivery) 
 	{
-		
+		String sql = "update dam_delivery_details set resident_flat_number=?, delivery_name=?, delivery_type=?, delivery_company=?"
+				+ ", delivery_expected_date=?, resident_mobile_number=? where delivery_reference_number = ?";
+		template.update(sql, delivery.getResident_flat_number(), delivery.getDelivery_name(), delivery.getDelivery_type(),
+				delivery.getDelivery_company(), delivery.getDelivery_expected_date(), delivery.getResident_mobile_number(), delivery.getDelivery_reference_number());
 	}
 
+	@Override
+	public void delete(Delivery delivery, String delivery_reference_number) 
+	{
+		String sql = "delete from dam_delivery_details where delivery_reference_number = ?";
+		template.update(sql, delivery.getDelivery_reference_number());
+	}
 }
