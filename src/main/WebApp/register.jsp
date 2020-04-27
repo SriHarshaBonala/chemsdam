@@ -84,6 +84,8 @@ div {
 
 h2{
 font-family: Georgia;
+text-align: center;
+margin-left: 50px;
 }
 
 p{
@@ -91,11 +93,11 @@ margin-left: 550px;
 }
 </style>
 </head>
-<body style="background-color: #E0FFFF;">
-	<h2 align="center">Delivery and Visitor Access Portal</h2>
-	<h2 align="center">New Resident Registration</h2>
+<body style="background-color: Turquoise;">
+	<h2>Delivery and Visitor Access Portal</h2>
 <div>
 	<form:form name="registrationForm" modelAttribute="register" action="register_resident" method="post" onsubmit="return validatereg()">
+		<h2>New Resident Registration</h2>
 		<label><b>Name: </b></label><br><input id="rname" name="resident_name" type="text" required> <br>
 		<label><b>Flat Number: </b></label><br><input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br>
 		<label><b>Mobile Number: </b></label><br><input id="rmobile_number" name="resident_mobile_number" type="text" required maxlength="10"> <br>
