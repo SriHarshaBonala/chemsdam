@@ -10,13 +10,14 @@
 
 h2{
 font-family: Georgia;
-margin-left: 550px;
+text-align: center;
+margin-left: 40px;
 }
 
 button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #48D1CC;
+  background-color: #20B2AA;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -54,11 +55,31 @@ button:hover span:after {
   right: 0;
 }
 
+input[type=submit] {
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition: 0.4s; 
+  transition-duration: 0.4s;
+}
+
+.b: {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 </style>
 </head>
-<body style="background-color: #E0FFFF;">
+<body style="background-color: PaleTurquoise;">
+<form action="logout_resident"><button class="b1">Logout</button></form>
 	<h2>Delivery and Visitor Access Portal</h2>
-	<h2>WELCOME TO XYZ APARTMENTS !!!</h2>	
+	<h2>WELCOME TO AIT APARTMENTS !!!</h2>	
 <div>
 	<button onclick="location.href = 'dms_home.jsp';"><span>Delivery Management System</span></button> <br><br>
 	<button onclick="location.href = 'vam_home.jsp';"><span>Visitor Access Management</span></button>
