@@ -1,7 +1,12 @@
 package ait.jan.sdqi.chemsdam.controller;
 
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,20 +33,26 @@ public class LoginController
 	}
 	
 	@RequestMapping(value = "login_details", method = RequestMethod.POST)
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") Credentials details)
+	public void login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") Credentials details) throws IOException, ServletException
 	{
-		ModelAndView model = null;
 		Resident resident = service.validate(request, details);
+		String direct = "login.jsp";
 		if(null != resident)
 		{
-			model = new ModelAndView("welcome");
-			model.addObject("firstname", resident.getResident_name());
+			HttpSession session = request.getSession();
+			session.setAttribute("resident", resident);
+			direct = "welcome.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(direct);
+			dispatcher.forward(request, response);
+			
 		}
 		else
 		{
-			model = new ModelAndView("login");
-			model.addObject("message","Username or password is incorrect");
+			String message = "Invalid Credentials";
+			request.setAttribute("message", message);
+			RequestDispatcher dispatcher = request.getRequestDispatcher(direct);
+			dispatcher.forward(request, response);
+			
 		}
-		return model;
 	}
 }
