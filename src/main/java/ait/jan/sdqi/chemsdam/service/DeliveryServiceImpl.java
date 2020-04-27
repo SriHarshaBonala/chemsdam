@@ -5,29 +5,36 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ait.jan.sdqi.chemsdam.dao.DeliveryDao;
-import ait.jan.sdqi.chemsdam.model.Delivery;
+import ait.jan.sdqi.chemsdam.dao.VisitorDao;
+import ait.jan.sdqi.chemsdam.model.Visitor;
 
 @Service
-public class DeliveryServiceImpl implements DeliveryService
+public class VisitorServiceImpl implements VisitorService
 {
-	@Autowired DeliveryDao ddao;
+	@Autowired VisitorDao vdao;
 	
 	@Override
-	public void register(Delivery delivery) 
+	public void register(Visitor visitor) 
 	{
-		ddao.register(delivery);
+		vdao.register(visitor);
 	}
 
 	@Override
-	public Delivery validate(HttpServletRequest req, Delivery delivery) 
+	public Visitor validate(HttpServletRequest req, Visitor visitor) 
 	{
-		return ddao.validate(req, delivery);
+		return vdao.validate(req, visitor);
 	}
 
 	@Override
-	public void update_details(Delivery delivery) 
+	public void update_details(Visitor visitor) 
 	{
-		ddao.update(delivery);
+		vdao.update(visitor);
 	}
+
+	@Override
+	public void delete_visitor(Visitor visitor, String visitor_identification_number) 
+	{
+		vdao.delete(visitor, visitor_identification_number);
+	}
+
 }
