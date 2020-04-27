@@ -54,19 +54,21 @@ div {
 h2{
 font-family: Georgia;
 text-align: center;
+margin-left: 70px;
 }
 
 p{
 margin-left: 550px;
 font-family: Georgia;
 }
+
 </style>
 </head>
-<body style="background-color: #E0FFFF;">
+<body style="background-color: Turquoise;">
 	<h2 align="center">Delivery and Visitor Access Portal</h2>
-	<h2>Forgot Password</h2> <br>
 <div>
 	<form:form id="fpasswordForm" modelAttribute="forgot" action="update_password" method="post">
+		<h2>Forgot Password</h2>
 		<label><b>Username : </b><label><br><input id="uname" name="username" type="text"> <br>
 		<label><b>Flat Number : </b><label><br><input id="mb" name="resident_flat_number" type="text" maxlength="6"> <br>
 		<label><b>New password : </b><label><br><input id="np" name="password" type="password"> <br>
