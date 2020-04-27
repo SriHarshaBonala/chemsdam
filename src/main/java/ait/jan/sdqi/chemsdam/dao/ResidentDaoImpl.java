@@ -29,7 +29,7 @@ public class ResidentDaoImpl implements ResidentDao
 	}
 
 	@Override
-	public Resident validate(HttpServletRequest req, Credentials details) 
+	public Resident validate(HttpServletRequest req, Credentials details)
 	{
 		String sql = "select * from dam_resident_credentials where username='" + details.getUsername() + "' and password='" + details.getPassword() + "'";
 		List<Resident> residents = template.query(sql, new UserMapper());
