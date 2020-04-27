@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Delivery Management System</title>
+  
 <style>
 
 input[type=text]{
@@ -44,7 +45,14 @@ input[type=submit]:hover {
 }
 
 
-div {
+.div1 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+}
+
+.div2 {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -105,18 +113,44 @@ div {
 }
 
 h2{
-margin-left: 550px;
+text-align: center;
+margin-left: 65px;
 font-family: Georgia;
 }
+
+.button {
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition: 0.4s; 
+  transition-duration: 0.4s;
+}
+
+.button: {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 </style>
 </head>
-<body style="background-color: #E0FFFF;">
+<body style="background-color: Turquoise;">
+  <button class="button" onclick="location.href='welcome.jsp';">Home</button>
+  <form id="bform" action="logout_resident"><button class="button">Logout</button></form>
+  <!-- button class="button" onclick="/logout">Logout</button> -->
 	<h2>Welcome to Delivery Management System</h2>
-<div>	
+<div class="div1">	
 	<label class="container">Register new delivery <input type="radio" name="delivery" checked="checked"><span class="checkmark"></span></label>
 	<label class="container">View past deliveries <input type="radio" name="delivery" onclick="location.href = 'past_delivery.jsp';"><span class="checkmark"></span></label>
 	<label class="container">View upcoming deliveries<input type="radio" name="delivery" onclick="location.href = 'future_delivery.jsp';"><span class="checkmark"></span></label><br>
-	
+</div><br><br>
+	<h2> Enter the delivery details below</h2>
+<div class="div2">	
 	<form:form name="newDelivery" modelAttribute="registerDelivery" action="register_delivery" method="post">
 		<label><b>Flat Number : </b></label><br><input id="rflat_number" name="resident_flat_number" type="text" required maxlength="6"> <br><br>
 		<label><b>Package Name : </b></label><br><input name="delivery_name" type="text" required> <br><br>
