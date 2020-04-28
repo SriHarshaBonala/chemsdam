@@ -1,2 +1,1 @@
-# chemsdam
-SDQI Course Project 2020
+# chemsdam SDQI Course Project 2020
