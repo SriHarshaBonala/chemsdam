@@ -1,5 +1,5 @@
 # Installation Manual of how to run the application:
-Full file can be found in the repository with pdf file named "Instruction Manual"
+Full file can be found in the repository with pdf file named "Installation Manual"
 
 # Step-1:
 Download java on the user's personal computer or laptop. Minimum java version required to run this setup is JDK11. The link to download java is mentioned below. After the setup has been downloaded, run the setup to complete the installation of java in the users machine.
