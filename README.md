@@ -45,7 +45,7 @@ After importing has been completed, the user might come across so many errors an
 
 Now if in case, updating the project has not removed the errors, the last way is to download the dependencies manually from the link 
 
-	https://mvnrepository.com/. 
+	https://mvnrepository.com/
 Now search for the dependencies that are present in the pom.xml file which have errors, download the jar files and place the downloaded jar file in the very end of the path location C:\Users\{username}\.m2\repository\ of respective dependency folder. And then after manually adding all the jar files, repeat the update project step above to remove all errors possible.
 
 
